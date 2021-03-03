@@ -12,13 +12,12 @@ introduce o descriere a sarcinii si declanseaza un buton "transmite sarcina". Im
 transmiterea unei sarcini, aceasta poate fi consultata de catre angajatul respectiv.
 
 • câte o fereastra pentru fiecare angajat: Atunci când angajatul vine la serviciu, introduce ora
-sosirii si declanseaza un buton "prezent". Imediat dupa declansarea butonului, seful vede în
-lista lui ca angajatul este prezent. În continuare, cât timp angajatul sta la serviciu, el primeste
-si, în consecinta, vede în fereastra lui, sarcinile transmise de sef. La plecare, angajatul închide
+sosirii si declanseaza un buton "prezent". Ora sosirii este validată de către sistem, astfel încât corespunde orei curente. 
+Imediat dupa declansarea butonului, seful vede în lista lui ca angajatul este prezent. În continuare, cât timp angajatul 
+sta la serviciu, el primeste si, în consecinta, vede în fereastra lui, sarcinile transmise de sef. La plecare, angajatul închide
 fereastra, moment în care seful este notificat de delogarea acestuia din sistem.
 
 
 • adăugarea unui angajat nou de către șef <br>
-• pentru cerința 2: validarea orei <br>
 • sarcina să conțină un status care să poată fi actualizat de fiecare angajat în parte, în funcție de 
 cât de mult a lucrat la sarcină <br>
