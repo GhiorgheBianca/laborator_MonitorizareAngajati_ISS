@@ -17,8 +17,8 @@ lista lui ca angajatul este prezent. În continuare, cât timp angajatul sta la 
 si, în consecinta, vede în fereastra lui, sarcinile transmise de sef. La plecare, angajatul închide
 fereastra, moment în care seful este notificat de delogarea acestuia din sistem.
 
-Cerințe adiționale:
-• adăugarea unui angajat nou de către șef
-• pentru cerința 2: validarea orei
+
+• adăugarea unui angajat nou de către șef <br>
+• pentru cerința 2: validarea orei <br>
 • sarcina să conțină un status care să poată fi actualizat de fiecare angajat în parte, în funcție de 
-cât de mult a lucrat la sarcină
+cât de mult a lucrat la sarcină <br>
