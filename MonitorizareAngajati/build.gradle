@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'org.iss'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName='Main'
+
+javafx {
+    modules = [ 'javafx.controls' , 'javafx.fxml']
+}
+
+dependencies {
+    runtime group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
+
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile 'org.springframework:spring-context:5.1.5.RELEASE'
+}

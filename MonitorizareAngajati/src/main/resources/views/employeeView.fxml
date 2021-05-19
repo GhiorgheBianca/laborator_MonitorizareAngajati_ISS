@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AngajatController">
+   <children>
+      <Label layoutX="23.0" layoutY="18.0" text="Ora autentificării:" />
+      <Button layoutX="319.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSetHour" prefHeight="25.0" prefWidth="76.0" text="Prezent">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TableView fx:id="tableView" layoutX="23.0" layoutY="85.0" prefHeight="274.0" prefWidth="258.0">
+        <columns>
+          <TableColumn fx:id="tableColumnDescription" prefWidth="145.0" text="Descriere" />
+          <TableColumn fx:id="tableColumnStatus" prefWidth="112.0" text="Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="58.0" text="Sarcinile mele:" />
+      <Button layoutX="310.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleUpdateRequest" text="Actualizează starea sarcinii">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="357.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="135.0" text="Deconectare">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox fx:id="comboBoxStatus" layoutX="301.0" layoutY="121.0" prefHeight="25.0" prefWidth="175.0" promptText="Selectează noul status">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="comboBoxHours" layoutX="124.0" layoutY="14.0" prefHeight="25.0" prefWidth="175.0" promptText="Selectează ora curentă">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+   </children>
+</AnchorPane>

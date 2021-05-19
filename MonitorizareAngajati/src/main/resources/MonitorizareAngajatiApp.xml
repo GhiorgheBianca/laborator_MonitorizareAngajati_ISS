@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="hibernateUtil" class="repository.HibernateUtil"/>
+
+    <bean id="angajatRepo" class="repository.AngajatRepositoryORM_Hibernate">
+        <constructor-arg ref="hibernateUtil"/>
+    </bean>
+
+    <bean id="sefRepo" class="repository.SefRepositoryORM_Hibernate">
+        <constructor-arg ref="hibernateUtil"/>
+    </bean>
+
+    <bean id="sarcinaRepo" class="repository.SarcinaRepositoryORM_Hibernate">
+        <constructor-arg ref="hibernateUtil"/>
+    </bean>
+
+    <bean id="angajatService" class="service.AngajatService">
+        <constructor-arg ref="angajatRepo"/>
+    </bean>
+
+    <bean id="sefService" class="service.SefService">
+        <constructor-arg ref="sefRepo"/>
+    </bean>
+
+    <bean id="sarcinaService" class="service.SarcinaService">
+        <constructor-arg ref="sarcinaRepo"/>
+    </bean>
+
+
+    <bean id="allService" class="service.AllServices">
+        <constructor-arg ref="angajatService"/>
+        <constructor-arg ref="sefService"/>
+        <constructor-arg ref="sarcinaService"/>
+    </bean>
+
+</beans>

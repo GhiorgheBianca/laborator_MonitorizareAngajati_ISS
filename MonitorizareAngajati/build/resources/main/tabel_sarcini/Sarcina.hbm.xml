@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="domain.Sarcina"
+           table="sarcini">
+
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+
+        <property
+                name="descriere"
+                column="descriere"/>
+
+        <property
+                name="status"
+                column="status"/>
+
+        <property
+                name="id_angajat"
+                column="id_angajat"/>
+
+    </class>
+</hibernate-mapping>
