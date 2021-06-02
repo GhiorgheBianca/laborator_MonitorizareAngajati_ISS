@@ -1,13 +1,9 @@
 package repository;
 
 import domain.Angajat;
-import domain.validators.Validator;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.util.List;
 
@@ -54,7 +50,7 @@ public class AngajatRepositoryORM_Hibernate implements IAngajatRepository {
 
                 try {
                     tx = session.beginTransaction();
-                    List<Angajat> angajati = session.createQuery("from Angajat where ora_conectare is not null and ora_deconectare is null", Angajat.class).list();
+                    List<Angajat> angajati = session.createQuery("from Angajat where ora_conectare is not null and ora_deconectare like 'null'", Angajat.class).list();
                     tx.commit();
                     return angajati;
                 } catch (RuntimeException ex) {
@@ -94,18 +90,58 @@ public class AngajatRepositoryORM_Hibernate implements IAngajatRepository {
             System.err.println("Exception " + e);
             e.printStackTrace();
         } finally {
-            sessionFactory.close();
+            //sessionFactory.close();
         }
         return angajat;
     }
 
     @Override
     public Angajat save(Angajat entity) {
+        try {
+            try (Session session = sessionFactory.openSession()) {
+                Transaction tx = null;
+
+                try {
+                    tx = session.beginTransaction();
+                    session.save(entity);
+                    tx.commit();
+                    return entity;
+                } catch (RuntimeException ex) {
+                    if (tx != null)
+                        tx.rollback();
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Exception " + e);
+            e.printStackTrace();
+        } finally {
+            //sessionFactory.close();
+        }
         return null;
     }
 
     @Override
     public Angajat update(Angajat entity) {
+        try {
+            try (Session session = sessionFactory.openSession()) {
+                Transaction tx = null;
+
+                try {
+                    tx = session.beginTransaction();
+                    session.update(entity);
+                    tx.commit();
+                    return entity;
+                } catch (RuntimeException ex) {
+                    if (tx != null)
+                        tx.rollback();
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Exception " + e);
+            e.printStackTrace();
+        } finally {
+            //sessionFactory.close();
+        }
         return null;
     }
 

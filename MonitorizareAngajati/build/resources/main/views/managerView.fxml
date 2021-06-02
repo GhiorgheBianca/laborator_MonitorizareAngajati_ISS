@@ -32,7 +32,7 @@
       <TextField fx:id="textFieldName" layoutX="148.0" layoutY="408.0" prefHeight="25.0" prefWidth="130.0" />
       <TextField fx:id="textFieldUsername" layoutX="148.0" layoutY="439.0" prefHeight="25.0" prefWidth="130.0" />
       <TextField fx:id="textFieldPassword" layoutX="148.0" layoutY="470.0" prefHeight="25.0" prefWidth="130.0" />
-      <Button layoutX="28.0" layoutY="520.0" mnemonicParsing="false" onAction="#handleAddAccount" prefHeight="25.0" prefWidth="250.0" text="Creează noul cont" />
+      <Button fx:id="handleAddEmployee" layoutX="28.0" layoutY="520.0" mnemonicParsing="false" onAction="#handleAddAccount" prefHeight="25.0" prefWidth="250.0" text="Creează noul cont" />
       <Label layoutX="361.0" layoutY="414.0" text="Trimite o sarcină" />
       <TextField fx:id="textFieldDescription" layoutX="418.0" layoutY="439.0" prefHeight="25.0" prefWidth="192.0" />
       <Label layoutX="359.0" layoutY="443.0" text="Descriere:" />

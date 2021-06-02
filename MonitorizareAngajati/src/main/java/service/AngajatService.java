@@ -20,4 +20,11 @@ public class AngajatService {
         return repositoryAngajat.filterByPresence();
     }
 
+    public Angajat addNewEmployee(Angajat angajat) {
+        return repositoryAngajat.save(angajat);
+    }
+
+    public Angajat changeHoursForEmployee(Angajat angajat) {
+        return repositoryAngajat.update(angajat);
+    }
 }

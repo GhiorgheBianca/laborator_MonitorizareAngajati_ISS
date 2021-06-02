@@ -1,16 +1,9 @@
 package repository;
 
-import domain.Angajat;
 import domain.Sef;
-import domain.validators.Validator;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-import java.util.List;
 
 public class SefRepositoryORM_Hibernate implements ISefRepository {
 

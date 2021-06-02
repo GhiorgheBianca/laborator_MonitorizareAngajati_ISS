@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AngajatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AngajatController">
    <children>
       <Label layoutX="23.0" layoutY="18.0" text="Ora autentificării:" />
       <Button layoutX="319.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSetHour" prefHeight="25.0" prefWidth="76.0" text="Prezent">
@@ -35,7 +35,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ComboBox>
-      <ComboBox fx:id="comboBoxHours" layoutX="124.0" layoutY="14.0" prefHeight="25.0" prefWidth="175.0" promptText="Selectează ora curentă">
+      <ComboBox fx:id="comboBoxHour" layoutX="144.0" layoutY="14.0" prefHeight="26.0" prefWidth="65.0" promptText="Oră">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="comboBoxMinute" layoutX="225.0" layoutY="13.0" prefHeight="26.0" prefWidth="76.0" promptText="Minut">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

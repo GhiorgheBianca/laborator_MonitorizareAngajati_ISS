@@ -1,8 +1,6 @@
 package repository;
 
-import domain.Angajat;
 import domain.Sarcina;
-import domain.validators.Validator;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -46,11 +44,51 @@ public class SarcinaRepositoryORM_Hibernate implements ISarcinaRepository {
 
     @Override
     public Sarcina save(Sarcina entity) {
+        try {
+            try (Session session = sessionFactory.openSession()) {
+                Transaction tx = null;
+
+                try {
+                    tx = session.beginTransaction();
+                    session.save(entity);
+                    tx.commit();
+                    return entity;
+                } catch (RuntimeException ex) {
+                    if (tx != null)
+                        tx.rollback();
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Exception " + e);
+            e.printStackTrace();
+        } finally {
+            //sessionFactory.close();
+        }
         return null;
     }
 
     @Override
     public Sarcina update(Sarcina entity) {
+        try {
+            try (Session session = sessionFactory.openSession()) {
+                Transaction tx = null;
+
+                try {
+                    tx = session.beginTransaction();
+                    session.update(entity);
+                    tx.commit();
+                    return entity;
+                } catch (RuntimeException ex) {
+                    if (tx != null)
+                        tx.rollback();
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Exception " + e);
+            e.printStackTrace();
+        } finally {
+            //sessionFactory.close();
+        }
         return null;
     }
 

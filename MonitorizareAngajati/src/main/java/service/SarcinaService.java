@@ -14,7 +14,14 @@ public class SarcinaService {
     }
 
     public List<Sarcina> filterByAngajat(Long employee_id){
-        return sarcinaRepository.filterByEmployee(employee_id);
+        return this.sarcinaRepository.filterByEmployee(employee_id);
     }
 
+    public Sarcina saveRequest(Sarcina sarcina) {
+        return this.sarcinaRepository.save(sarcina);
+    }
+
+    public Sarcina updateRequest(Sarcina sarcina) {
+        return this.sarcinaRepository.update(sarcina);
+    }
 }
